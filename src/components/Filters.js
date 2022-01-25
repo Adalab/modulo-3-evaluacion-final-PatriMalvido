@@ -4,7 +4,7 @@ import FilterByHouse from './FilterByHouse';
 const Filters = (props)=> {
 return (
     <section className="section__form">
-          <form className="form">
+          <form className="form" onSubmit={(ev)=>ev.preventDefault()}>
               <FilterByName handleFilter={props.handleFilter}/>
 
             {/* <label className="form__label" htmlFor="name">
