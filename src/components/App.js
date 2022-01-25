@@ -1,11 +1,23 @@
 import '../styles/App.scss';
+import { useState, useEffect } from 'react';
+import callToApi from '../services/CallToApi';
+import Filters from './Filters';
 
 function App() {
+
+  const [characters, setCharacters]= useState ([]);
+
+useEffect(()=>{
+  callToApi().then((data) => setCharacters(data));
+}, []);
+
+
+
   return (
     <div>
       <main>
         <h1 className="page__title">Harry Potter</h1>
-        <section className="section__form">
+        {/* <section className="section__form">
           <form className="form">
             <label className="form__label" htmlFor="name">
               Busca por personaje:
@@ -26,7 +38,7 @@ function App() {
               <option value="slytherin">Slytherin</option>
             </select>
           </form>
-        </section>
+        </section> */}
         <section className="section_cards">
           <ul className="cards">
             <li className="card">aqui va la info del personaje</li>
