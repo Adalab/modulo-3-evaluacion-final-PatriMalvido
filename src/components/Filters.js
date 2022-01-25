@@ -16,7 +16,10 @@ return (
               name="name"
               id="text"
             /> */}
-            <label className="form__label" htmlFor="house">
+            <FilterByHouse handleFilter={props.handleFilter}/>
+
+
+            {/* <label className="form__label" htmlFor="house">
               Seleccciona la casa:
             </label>
             <select className="form__input-text" name="house" id="house">
@@ -24,7 +27,7 @@ return (
               <option value="hufflepuff">Hufflepuff</option>
               <option value="ravenclaw">Ravenclaw</option>
               <option value="slytherin">Slytherin</option>
-            </select>
+            </select> */}
           </form>
         </section>
 )

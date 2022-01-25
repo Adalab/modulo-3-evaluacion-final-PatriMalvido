@@ -2,44 +2,43 @@ import '../styles/App.scss';
 import { useState, useEffect } from 'react';
 import callToApi from '../services/CallToApi';
 import Filters from './Filters';
-import CharacterCard from './CharacterCard';
 import CharacterList from './CharacterList';
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
+  const [houseFilter, setHouseFilter] = useState('gryffindor');
 
   useEffect(() => {
-    callToApi().then((data) => setCharacters(data));
-  }, []);
+    callToApi(houseFilter).then((data) => setCharacters(data));
+  }, [houseFilter]);
 
   //EVENTOS-------------------------------------------
 
   const handleFilter = (data) => {
     if (data.key === 'name') {
       setNameFilter(data.value);
-    };
+    } else if (data.key === 'house') {
+      setHouseFilter(data.value);
+    }
   };
 
-// RENDER----------------------------------------------
+  // RENDER----------------------------------------------
 
-const filteredCharacters = characters
-.filter ((character)=>{
-  return character.name
-  .toLocaleLowerCase()
-  .includes(nameFilter.toLocaleLowerCase());
-});
-
-
-
-
+  const filteredCharacters = characters
+    .filter((character) => {
+      return character.name
+        .toLocaleLowerCase()
+        .includes(nameFilter.toLocaleLowerCase());
+    });
+  
 
   return (
     <div>
       <main>
         <h1 className="page__title">Harry Potter</h1>
 
-        <Filters  handleFilter= {handleFilter}/>
+        <Filters handleFilter={handleFilter} />
         {/* <section className="section__form">
           <form className="form">
             <label className="form__label" htmlFor="name">
@@ -62,7 +61,7 @@ const filteredCharacters = characters
             </select>
           </form>
         </section> */}
-<CharacterList characters={filteredCharacters}/>
+        <CharacterList characters={filteredCharacters} />
         {/* <section className="section_cards">
           <ul className="cards">
             <li className="card">aqui va la info del personaje</li>
