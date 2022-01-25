@@ -1,11 +1,11 @@
 import CharacterCard from './CharacterCard';
 
 const CharacterList = (props) => {
-  const characterElements = props.characters.map((character) => {
+  const characterElements = props.characters.map((character,index) => {
     return (
-      <li key={props.id} className="card">
+      <li key={index} className="card">
         
-        <CharacterCard key={props.id} character={character} />
+        <CharacterCard  character={character} />
       </li>
     );
   });
