@@ -2,14 +2,35 @@ import '../styles/App.scss';
 import { useState, useEffect } from 'react';
 import callToApi from '../services/CallToApi';
 import Filters from './Filters';
+import CharacterCard from './CharacterCard';
+import CharacterList from './CharacterList';
 
 function App() {
+  const [characters, setCharacters] = useState([]);
+  const [nameFilter, setNameFilter] = useState('');
 
-  const [characters, setCharacters]= useState ([]);
+  useEffect(() => {
+    callToApi().then((data) => setCharacters(data));
+  }, []);
 
-useEffect(()=>{
-  callToApi().then((data) => setCharacters(data));
-}, []);
+  //EVENTOS-------------------------------------------
+
+  const handleFilter = (data) => {
+    if (data.key === 'name') {
+      setNameFilter(data.value);
+    };
+  };
+
+// RENDER----------------------------------------------
+
+const filteredCharacters = characters
+.filter ((character)=>{
+  return character.name
+  .toLocaleLowerCase()
+  .includes(nameFilter.toLocaleLowerCase());
+});
+
+
 
 
 
@@ -17,6 +38,8 @@ useEffect(()=>{
     <div>
       <main>
         <h1 className="page__title">Harry Potter</h1>
+
+        <Filters  handleFilter= {handleFilter}/>
         {/* <section className="section__form">
           <form className="form">
             <label className="form__label" htmlFor="name">
@@ -39,11 +62,12 @@ useEffect(()=>{
             </select>
           </form>
         </section> */}
-        <section className="section_cards">
+<CharacterList characters={filteredCharacters}/>
+        {/* <section className="section_cards">
           <ul className="cards">
             <li className="card">aqui va la info del personaje</li>
           </ul>
-        </section>
+        </section> */}
       </main>
       <footer className="footer">
         <p>texto para el footer</p>

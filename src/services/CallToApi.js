@@ -6,6 +6,7 @@ const callToApi = () => {
         return data.map((character)=>{
           
             return {
+                id: character.name + character.house,
                 image: character.image,
                 name: character.name,
                 specie:character.species,

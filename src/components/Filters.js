@@ -1,11 +1,13 @@
 import FilterByName from './FiltersByName';
 import FilterByHouse from './FilterByHouse';
 
-const Filters = ()=> {
+const Filters = (props)=> {
 return (
     <section className="section__form">
           <form className="form">
-            <label className="form__label" htmlFor="name">
+              <FilterByName handleFilter={props.handleFilter}/>
+
+            {/* <label className="form__label" htmlFor="name">
               Busca por personaje:
             </label>
             <input
@@ -13,7 +15,7 @@ return (
               type="text"
               name="name"
               id="text"
-            />
+            /> */}
             <label className="form__label" htmlFor="house">
               Seleccciona la casa:
             </label>
