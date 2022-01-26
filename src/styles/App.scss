@@ -1,98 +1,136 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  a:link,
-  a:visited,
-  a:active {
-    text-decoration: none;
-  }
-}
+@import 'core/reset';
+@import 'core/mixins.scss';
+@import 'core/variables.scss';
+@import 'layout/Cards.scss';
+@import 'layout/Header.scss';
+@import 'layout/Form.scss';
+//@import 'components/App';
+
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   a:link,
+//   a:visited,
+//   a:active {
+//     text-decoration: none;
+//   }
+// }
 body {
-  color: white;
-  background-color: black;
+  background-image: url('../images/PaperBackground.jpg');
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  &__img {
-    margin: 10px;
-  }
-}
+// .header {
+//   display: flex;
+//   justify-content: center;
+//   &__img {
+//     margin: 10px;
+//   }
+// }
 
-.form {
-  margin: 50px;
-}
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  margin: 0 auto;
-  max-width: 1140px;
-  padding: 30px 28px;
-  grid-gap: 30px;
-  align-items: stretch;
-}
+// .form {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   padding: 40px;
+//   &__input-text {
+//     margin: 10px;
+//     height: 40px;
+//     width: 20%;
+//     border-radius: 8px;
+//     outline: none;
+//     border: 2px solid #c4c4c4;
+//     padding: 0 30px;
+//     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+//     font-size: 1.2rem;
+//     font-family: 'Goudy Bookletter 1911', serif;
+  
+//   }
+//   &__label {
+//     font-family: 'Goudy Bookletter 1911', serif;
+//     font-size: 1.3rem;
+//     font-weight: bold;
+//   }
+// }
+// .cards {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+//   margin: 0 auto;
+//   max-width: 1140px;
+//   padding: 30px 28px;
+//   grid-gap: 30px;
+//   align-items: stretch;
+// }
 
-.card {
-  display: block;
-  transition: transform 0.3s cubic-bezier(0.374, 0.019, 0.035, 1.861);
-  background-color: rgb(189, 135, 21);
-  border-radius: 4px;
-  box-shadow: 0 2px 2px 1px rgba(230, 152, 9, 0.1);
-  width: 100%;
-  height: 340px;
-  list-style: none;
+// .card {
+//   display: block;
+//   transition: transform 0.3s cubic-bezier(0.374, 0.019, 0.035, 1.861);
+//   background-color: rgb(48, 22, 1);
+//   border-radius: 8px;
+//   box-shadow: 0 2px 2px 1px rgba(230, 152, 9, 0.1);
+//   width: 100%;
+//   height: 340px;
+//   list-style: none;
 
-  &:hover {
-    transform: scale(1.03);
-  }
-  &__img {
-    border-radius: 50%;
-    padding: 10px;
-    width: 210px;
-    height: 260px;
-  }
-  &__title {
-    font-size: 1.5rem;
-    //padding: 10px;
-    color: black;
-    text-align: center;
-    font-family: 'Goudy Bookletter 1911', serif;
-  }
-  &__description {
-    color: black;
-    text-align: center;
-    font-family: 'Goudy Bookletter 1911', serif;
-    font-size: 1.3rem;
-  }
-}
+//   &:hover {
+//     transform: scale(1.03);
+//   }
+//   &__img {
+//     border-radius: 50%;
+//     padding: 10px;
+//     width: 210px;
+//     height: 260px;
+//     object-fit: cover;
+//   }
+//   &__title {
+//     font-size: 1.8rem;
+//     //padding: 10px;
+//     color: black;
+//     text-align: center;
+//     font-family: 'Goudy Bookletter 1911', serif;
+//   }
+//   &__description {
+//     color: black;
+//     text-align: center;
+//     font-family: 'Goudy Bookletter 1911', serif;
+//     font-size: 1.5rem;
+//     font-weight: bold;
+//   }
+// }
 
-.modal__container {
-  display: flex;
-  justify-content: center;
-  margin: 40px;
+// .modal__container {
+//   display: flex;
+//   justify-content: center;
+//   margin: 40px;
+// }
+// .modal__close {
+//   list-style: none;
+//   color: black;
+//   padding: 5px;
+// }
 
-}
+// .modal__text {
+//   color: black;
+//   padding: 10px;
+//   font-family: 'Goudy Bookletter 1911', serif;
+//   font-size: 1.5rem;
+// }
+// .modal__card {
+//   display: flex;
+//   width: 450px;
+//   height: 450px;
+//   justify-content: center;
+//   background-color: rgb(105, 55, 13);
+//   box-shadow: 0 2px 2px 1px rgba(230, 152, 9, 0.1);
+//   border-radius: 8px;
+//   align-items: center;
 
-.modal__card {
-  display: flex;
-  width: 450px;
-  height: 450px;
-  justify-content: center;
-  background-color: rgb(189, 135, 21);
-  box-shadow: 0 2px 2px 1px rgba(230, 152, 9, 0.1);
-  border-radius: 4px;
-  align-items: center;
- 
- 
-  &-text{
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    font-family: 'Goudy Bookletter 1911', serif;
-    font-size: 1.3rem;
-    font-weight: bold;
-
-  }
-}
+//   &-text {
+//     list-style: none;
+//     text-decoration: none;
+//     color: black;
+//     font-family: 'Goudy Bookletter 1911', serif;
+//     font-size: 1.5rem;
+//     font-weight: bold;
+//   }
+// }

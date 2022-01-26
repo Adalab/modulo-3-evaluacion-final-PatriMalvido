@@ -5,7 +5,10 @@ import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import { Route, Switch } from 'react-router-dom';
-import LogoHarryPotter from '../images/LogoHarryPotter.png';
+
+
+import Logo from '../images/Logo.png';
+
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -21,6 +24,9 @@ function App() {
   const handleFilter = (data) => {
     if (data.key === 'name') {
       setNameFilter(data.value);
+    // } else if (data.key !== 'name'){
+    //   setNameFilter('No hay ningún personaje con ese nombre')
+    
     } else if (data.key === 'house') {
       setHouseFilter(data.value);
     }
@@ -58,7 +64,7 @@ function App() {
   return (
     <div>
       <header className='header'>
-        <img className='header__img' src={LogoHarryPotter} alt="Logo de Harry Potter" title='Logo de Harry Potter' />
+        <img className='header__img' src={Logo} alt="Logo de Harry Potter" title='Logo de Harry Potter' />
       </header>
       <main>
        

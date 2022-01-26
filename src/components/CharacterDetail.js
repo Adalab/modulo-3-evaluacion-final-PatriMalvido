@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
+import HouseLogo from '../images/HouseLogo.png';
 
 const CharacterDetail = (props) => {
-
-
   const getSpecies = () => {
     if (props.character.specie === 'human') {
-      return 'Humano';
+      return 'Humano ';
     } else if (props.character.specie === 'ghost') {
-      return 'Fantasma';
+      return 'Fantasma 👻';
     } else if (props.character.specie === 'werewolf') {
       return 'Hombre lobo';
     } else if (props.character.specie === 'half-giant') {
@@ -31,30 +30,28 @@ const CharacterDetail = (props) => {
     // } else if (!props.character.alive && props.character.gender === 'male') {
     //   return 'Muerto';
     // }
-    if (props.character.alive === true ){
-        return 'Vivo';
-    }else {
-        return 'Muerto'
+    if (props.character.alive === true) {
+      return 'Vivo 🫀';
+    } else {
+      return 'Muerto 💀';
     }
-
   };
 
-  const getHouse =()=>{
+  const getHouse = () => {
     if (props.character.house === 'Gryffindor') {
-        return 'Gryffindor';
-      } else if (props.character.house === 'Hufflepuff') {
-        return 'Hufflepuff';
-      } else if (props.character.house === 'Ravenclaw') {
-        return 'Ravenclaw';
-      } else if (props.character.house === 'Slytherin') {
-        return 'Slytherin';
-      }
+      return 'Gryffindor';
+    } else if (props.character.house === 'Hufflepuff') {
+      return 'Hufflepuff';
+    } else if (props.character.house === 'Ravenclaw') {
+      return 'Ravenclaw';
+    } else if (props.character.house === 'Slytherin') {
+      return 'Slytherin';
+    }
   };
-  
+
   const getGender = () => {
     return props.character.gender === 'female' ? 'Mujer' : 'Hombre';
   };
-
 
   if (props.character === undefined) {
     return (
@@ -64,7 +61,7 @@ const CharacterDetail = (props) => {
             Usuario no encontrado <i class="fa-solid fa-circle-xmark"></i>
           </h2>
           <Link to="/">
-              Volver al listado
+            Volver al listado
             <span className="modal__close icon fas fa-times"></span>
           </Link>
         </header>
@@ -74,36 +71,65 @@ const CharacterDetail = (props) => {
       </>
     );
   } else {
-    return (
-      <>
-       <div className='modal__container'>
-        <header className="modal__header">
-          <h2>titulo</h2>
-          <Link to="/">
-            Volver al listado
-            <span className="modal__close icon fas fa-times"></span>
-          </Link>
-        </header>
-       
-        <section className='modal__card'>
-          <img
-            className="card__img"
-            src={props.character.image}
-            alt={`Foto de ${props.character.name}`}
-            title={`Foto de ${props.character.name}`}
-          />
-          <ul className="modal__card-text">
-            <li key={props.character.id}>{props.character.name}</li>
-            <li>Estatus: {getStatus()}</li>
-            <li>Especie: {getSpecies()}</li>
-            <li>Género: {getGender()}</li>
-            <li>Casa: {getHouse()}</li>
-          </ul>
-         
-        </section>
-        </div>
-      </>
-    );
+    if (!props.character.image) {
+      return (
+        <>
+          <div className="modal__container">
+            <header className="modal__header">
+              <Link className="modal__text" to="/">
+                Volver al listado
+                <i className="modal__close icon fas fa-times"></i>
+              </Link>
+            </header>
+
+            <section className="modal__card">
+              <img
+                className="card__img"
+                src={HouseLogo}
+                alt={`Foto de ${props.character.name}`}
+                title={`Foto de ${props.character.name}`}
+              />
+              <ul className="modal__card-text">
+                <li key={props.character.id}>{props.character.name}</li>
+                <li>Estatus: {getStatus()}</li>
+                <li>Especie: {getSpecies()}</li>
+                <li>Género: {getGender()}</li>
+                <li>Casa: {getHouse()}</li>
+              </ul>
+            </section>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className="modal__container">
+            <header className="modal__header">
+              <Link className="modal__text" to="/">
+                Volver al listado
+                <i className="modal__close icon fas fa-times"></i>
+              </Link>
+            </header>
+
+            <section className="modal__card">
+              <img
+                className="card__img"
+                src={props.character.image}
+                alt={`Foto de ${props.character.name}`}
+                title={`Foto de ${props.character.name}`}
+              />
+              <ul className="modal__card-text">
+                <li key={props.character.id}>{props.character.name}</li>
+                <li>Estatus: {getStatus()}</li>
+                <li>Especie: {getSpecies()}</li>
+                <li>Género: {getGender()}</li>
+                <li>Casa: {getHouse()}</li>
+              </ul>
+            </section>
+          </div>
+        </>
+      );
+    }
   }
 };
 export default CharacterDetail;

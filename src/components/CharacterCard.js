@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import HouseLogo from '../images/HouseLogo.png';
 
 const CharacterCard = (props) => {
   const getSpecies = () => {
@@ -19,17 +20,13 @@ const CharacterCard = (props) => {
     }
   };
 
-
-  const defaultImage =
-    'https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter';
-
   if (!props.character.image) {
     return (
       <>
       <Link to={`/character/${props.character.id}`}>
         <img
           className="card__img"
-          src={defaultImage}
+          src={HouseLogo}
           alt={`Foto de ${props.character.name}`}
           title={`Foto de ${props.character.name}`}
         />
