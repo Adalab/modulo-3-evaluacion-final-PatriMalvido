@@ -13,6 +13,7 @@ const callToApi = (houseFilter) => {
                 specie:character.species,
                 alive: character.alive,
                 gender: character.gender,
+                house: character.house,
             };
      
       });

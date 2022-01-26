@@ -5,6 +5,7 @@ import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import { Route, Switch } from 'react-router-dom';
+import LogoHarryPotter from '../images/LogoHarryPotter.png';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -56,8 +57,11 @@ function App() {
 
   return (
     <div>
+      <header className='header'>
+        <img className='header__img' src={LogoHarryPotter} alt="Logo de Harry Potter" title='Logo de Harry Potter' />
+      </header>
       <main>
-        <h1 className="page__title">Harry Potter</h1>
+       
         <Switch>
           <Route path="/" exact>
             <Filters handleFilter={handleFilter} />

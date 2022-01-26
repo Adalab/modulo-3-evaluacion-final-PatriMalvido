@@ -48,7 +48,7 @@ const CharacterCard = (props) => {
           alt={`Foto de ${props.character.name}`}
           title={`Foto de ${props.character.name}`}
         />
-        <h4 className="card__title">Nombre:{props.character.name}</h4>
+        <h4 className="card__title">{props.character.name}</h4>
         <p className="card__description">{getSpecies()}</p>
         </Link>
       </>
