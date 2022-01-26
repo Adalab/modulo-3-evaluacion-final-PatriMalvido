@@ -8,6 +8,10 @@
       text-decoration: none;
     }
   }
+  body {
+   color: white ;
+    background-color: black;
+  }
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -34,13 +38,13 @@
     &__img {
       border-radius: 50%;
       padding: 10px;
-      max-width: 200px;
-      max-height: 200px;
+      width: 210px;
+      height: 295px;
     
     }
     &__title {
-      font-size: 1.5rem;
-      padding: 10px;
+      font-size: 1rem;
+      //padding: 10px;
       color: black;
       text-align: center;
     }

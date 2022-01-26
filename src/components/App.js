@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import callToApi from '../services/CallToApi';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -25,52 +27,50 @@ function App() {
 
   // RENDER----------------------------------------------
 
-  const filteredCharacters = characters
-    .filter((character) => {
-      return character.name
-        .toLocaleLowerCase()
-        .includes(nameFilter.toLocaleLowerCase());
-    });
-  
+  const filteredCharacters = characters.filter((character) => {
+    return character.name
+      .toLocaleLowerCase()
+      .includes(nameFilter.toLocaleLowerCase());
+  });
+
+  // const renderCharacterDetail = (props) => {
+  //   const characterId = props.match.params.characterId;
+
+  //   const foundCharacter = characters.find((character) => {
+  //     return character.id === characterId;
+  //   });
+
+  //   if (foundCharacter !== undefined) {
+  //     return <CharacterDetail character={foundCharacter} />;
+  //   }
+  // };
+  const renderCharacterDetail = (props) => {
+    const routeId = parseInt(props.match.params.id);
+
+    const findCharacter = characters.find((character) => character.id === routeId);
+
+    return <CharacterDetail character={findCharacter} />;
+
+  }
+
 
   return (
     <div>
       <main>
         <h1 className="page__title">Harry Potter</h1>
+        <Switch>
+          <Route path="/" exact>
+            <Filters handleFilter={handleFilter} />
 
-        <Filters handleFilter={handleFilter} />
-        {/* <section className="section__form">
-          <form className="form">
-            <label className="form__label" htmlFor="name">
-              Busca por personaje:
-            </label>
-            <input
-              className="form__input-text"
-              type="text"
-              name="name"
-              id="text"
-            />
-            <label className="form__label" htmlFor="house">
-              Seleccciona la casa:
-            </label>
-            <select className="form__input-text" name="house" id="house">
-              <option value="gryffindor">Gryffindor</option>
-              <option value="hufflepuff">Hufflepuff</option>
-              <option value="ravenclaw">Ravenclaw</option>
-              <option value="slytherin">Slytherin</option>
-            </select>
-          </form>
-        </section> */}
-        <CharacterList characters={filteredCharacters} />
-        {/* <section className="section_cards">
-          <ul className="cards">
-            <li className="card">aqui va la info del personaje</li>
-          </ul>
-        </section> */}
+            <CharacterList characters={filteredCharacters} />
+
+            <footer className="footer">
+              <p>texto para el footer</p>
+            </footer>
+          </Route>
+          <Route path="/character/:id" render={renderCharacterDetail} />
+        </Switch>
       </main>
-      <footer className="footer">
-        <p>texto para el footer</p>
-      </footer>
     </div>
   );
 }

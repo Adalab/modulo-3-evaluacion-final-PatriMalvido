@@ -3,19 +3,23 @@ const callToApi = (houseFilter) => {
       .then((response) => response.json())
       .then((data) => {
       
-        const cleanData= data.map((character)=>{
-          
+        const cleanData= data.map((character,index)=>{
+  
             return {
-                id: character.actor,
+              id: index,
+                // id: character.actor + character.name,
                 image: character.image,
                 name: character.name,
                 specie:character.species,
-              
+                alive: character.alive,
+                gender: character.gender,
             };
      
       });
       console.log(data);
+  
     return cleanData;
+
     });
 
   };
