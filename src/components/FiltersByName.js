@@ -1,9 +1,10 @@
 const FilterByName = (props)=>{
-const handleChange =(ev)=>{
-props.handleFilter ( {
+
+  const handleChange =(ev)=>{
+    props.handleFilter ( {
     value: ev.currentTarget.value,
     key: 'name',
-});
+  });
 };
 
 return (

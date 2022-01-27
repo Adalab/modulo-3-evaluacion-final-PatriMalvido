@@ -11,9 +11,9 @@
   .card {
     display: block;
     transition: transform 0.3s cubic-bezier(0.374, 0.019, 0.035, 1.861);
-    background-color: rgb(48, 22, 1);
-    border-radius: 8px;
-    box-shadow: 0 2px 2px 1px rgba(230, 152, 9, 0.1);
+    //background-color: rgb(48, 22, 1);
+    //border-radius: 8px;
+    //box-shadow: 0 2px 2px 1px rgba(230, 152, 9, 0.1);
     width: 100%;
     height: 340px;
     list-style: none;
@@ -22,11 +22,15 @@
       transform: scale(1.03);
     }
     &__img {
+      display: block;
       border-radius: 50%;
       padding: 10px;
       width: 210px;
       height: 260px;
       object-fit: cover;
+      margin: auto;
+      border: 10px solid rgb(34, 23, 0);
+    
      
     }
     &__title {
@@ -35,6 +39,10 @@
       color: black;
       text-align: center;
       font-family: 'Goudy Bookletter 1911', serif;
+      text-shadow: 1px 1px 2px black, 0 0 1em rgb(255, 166, 0), 0 0 0.2em rgb(255, 166, 0);
+   
+   
+      
     }
     &__description {
       color: black;
@@ -42,6 +50,8 @@
       font-family: 'Goudy Bookletter 1911', serif;
       font-size: 1.5rem;
       font-weight: bold;
+      text-shadow: 1px 1px 2px black, 0 0 1em rgb(255, 166, 0), 0 0 0.2em rgb(255, 166, 0);
+      
     }
   }
   
@@ -72,6 +82,8 @@
     border-radius: 8px;
     align-items: center;
   
+  
+    
     &-text {
       list-style: none;
       text-decoration: none;
@@ -79,6 +91,9 @@
       font-family: 'Goudy Bookletter 1911', serif;
       font-size: 1.5rem;
       font-weight: bold;
+      padding:20px;
+
+      
     }
   }
   

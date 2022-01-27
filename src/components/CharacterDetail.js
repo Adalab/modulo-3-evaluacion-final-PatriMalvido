@@ -58,7 +58,7 @@ const CharacterDetail = (props) => {
       <>
         <header className="modal__header">
           <h2 className="modal__title">
-            Usuario no encontrado <i class="fa-solid fa-circle-xmark"></i>
+            Usuario no encontrado <i className="fa-solid fa-circle-xmark"></i>
           </h2>
           <Link to="/">
             Volver al listado

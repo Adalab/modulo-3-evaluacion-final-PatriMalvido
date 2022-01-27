@@ -24,8 +24,7 @@ function App() {
   const handleFilter = (data) => {
     if (data.key === 'name') {
       setNameFilter(data.value);
-    // } else if (data.key !== 'name'){
-    //   setNameFilter('No hay ningún personaje con ese nombre')
+   
     
     } else if (data.key === 'house') {
       setHouseFilter(data.value);
@@ -40,17 +39,6 @@ function App() {
       .includes(nameFilter.toLocaleLowerCase());
   });
 
-  // const renderCharacterDetail = (props) => {
-  //   const characterId = props.match.params.characterId;
-
-  //   const foundCharacter = characters.find((character) => {
-  //     return character.id === characterId;
-  //   });
-
-  //   if (foundCharacter !== undefined) {
-  //     return <CharacterDetail character={foundCharacter} />;
-  //   }
-  // };
   const renderCharacterDetail = (props) => {
     const routeId = parseInt(props.match.params.id);
 
@@ -74,8 +62,8 @@ function App() {
 
             <CharacterList characters={filteredCharacters} />
 
-            <footer className="footer">
-              <p>texto para el footer</p>
+            <footer className='footer'>
+              <p className='footer__text'>Patri Malvido</p>
             </footer>
           </Route>
           <Route path="/character/:id" render={renderCharacterDetail} />
