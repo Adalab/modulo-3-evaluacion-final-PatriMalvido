@@ -14,6 +14,7 @@ return (
   </label>
   <input
     className="form__input-text"
+    placeholder='Por ej. Voldemor'
     type="text"
     name="name"
     id="text"

@@ -21,15 +21,7 @@ const CharacterDetail = (props) => {
   };
 
   const getStatus = () => {
-    // if (props.character.alive && props.character.gender === 'female') {
-    //   return 'Viva';
-    // } else if (props.character.alive && props.character.gender === 'male') {
-    //   return 'Vivo';
-    // } else if (!props.character.alive && props.character.gender === 'female') {
-    //   return 'Muerta';
-    // } else if (!props.character.alive && props.character.gender === 'male') {
-    //   return 'Muerto';
-    // }
+
     if (props.character.alive === true) {
       return 'Vivo 🫀';
     } else {
