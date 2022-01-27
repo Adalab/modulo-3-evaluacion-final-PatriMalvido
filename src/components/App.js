@@ -65,8 +65,12 @@ function App() {
        
         <Switch>
           <Route path="/" exact>
-            <Filters handleFilter={handleFilter}
-            nameFilter={nameFilter} ResetButton={ResetButton} />
+            <Filters 
+            handleFilter={handleFilter}
+            resetButton={ResetButton}
+            nameFilter={nameFilter}
+            nameHouse={houseFilter}
+          />
 
             <CharacterList characters={filteredCharacters} />
 

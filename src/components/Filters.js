@@ -7,8 +7,8 @@ const Filters = (props) => {
     <section className="section__form">
       <form className="form" onSubmit={(ev) => ev.preventDefault()}>
         <FilterByName handleFilter={props.handleFilter} nameFilter={props.nameFilter}/>
-        <FilterByHouse handleFilter={props.handleFilter} />
-        <ResetButton handleClick={props.handleClick} />
+        <FilterByHouse handleFilter={props.handleFilter} nameHouse={props.nameHouse}/>
+        <ResetButton resetButton={props.resetButton} />
       </form>
     </section>
   );

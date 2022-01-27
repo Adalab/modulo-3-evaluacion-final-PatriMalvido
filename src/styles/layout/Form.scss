@@ -26,3 +26,23 @@
       font-weight: bold;
     }
   }
+  .button {
+    margin-top: 15px;
+    width: 15%;
+    height: 40px;
+    background-color: #eee2d5;
+    border: 2px solid #e4bc8e;
+    border-radius: 8px;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Goudy Bookletter 1911', serif;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s ease;
+  }
+  .btn:hover {
+    opacity: 0.8;
+  }
+  
+  

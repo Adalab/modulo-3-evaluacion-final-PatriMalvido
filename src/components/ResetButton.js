@@ -4,7 +4,7 @@ const ResetButton =(props)=>{
     };
     return (
         <button className='button' onClick={handleClick}>
-            Volver al listado
+            Borrar
         </button>
     );
    };

@@ -16,6 +16,7 @@ const handleChange =(ev)=>{
         name="house" 
         key= 'house'
         onChange={handleChange}
+        value={props.nameHouse}
         >
         <option value="gryffindor">Gryffindor</option>
         <option value="hufflepuff">Hufflepuff</option>
