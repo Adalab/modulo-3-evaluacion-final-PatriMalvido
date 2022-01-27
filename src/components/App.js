@@ -8,6 +8,7 @@ import { Route, Switch } from 'react-router-dom';
 
 
 import Logo from '../images/Logo.png';
+import ResetButton from './ResetButton';
 
 
 function App() {
@@ -30,6 +31,12 @@ function App() {
       setHouseFilter(data.value);
     }
   };
+  const ResetButton = () => {
+    setHouseFilter('Gryffindor');
+    setNameFilter('');
+
+  };
+
 
   // RENDER----------------------------------------------
 
@@ -58,7 +65,8 @@ function App() {
        
         <Switch>
           <Route path="/" exact>
-            <Filters handleFilter={handleFilter} />
+            <Filters handleFilter={handleFilter}
+            nameFilter={nameFilter} ResetButton={ResetButton} />
 
             <CharacterList characters={filteredCharacters} />
 

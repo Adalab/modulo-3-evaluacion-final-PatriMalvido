@@ -19,6 +19,7 @@ return (
     name="name"
     id="text"
     onChange={handleChange}
+    value={props.nameFilter}
   />
   </>
 )
