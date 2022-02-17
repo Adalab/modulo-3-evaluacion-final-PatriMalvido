@@ -8,13 +8,14 @@ import { Route, Switch } from 'react-router-dom';
 
 
 import Logo from '../images/Logo.png';
-import ResetButton from './ResetButton';
+
 
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
-  const [houseFilter, setHouseFilter] = useState('gryffindor');
+  const [houseFilter, setHouseFilter] = useState('Gryffindor');
+  const [gender,setGender]= useState('');
 
   useEffect(() => {
     callToApi(houseFilter).then((data) => setCharacters(data));
@@ -29,7 +30,10 @@ function App() {
     
     } else if (data.key === 'house') {
       setHouseFilter(data.value);
+    }else if (data.key === 'gender'){
+      setGender(data.value)
     }
+
   };
   const ResetButton = () => {
     setHouseFilter('Gryffindor');
@@ -40,10 +44,15 @@ function App() {
 
   // RENDER----------------------------------------------
 
-  const filteredCharacters = characters.filter((character) => {
+  const filteredCharacters = characters
+  .filter((character) => {
     return character.name
       .toLocaleLowerCase()
       .includes(nameFilter.toLocaleLowerCase());
+  })
+   .filter ((character)=>{
+     return character.gender === '' ? true : character.gender===gender;
+
   });
 
   const renderCharacterDetail = (props) => {
@@ -70,6 +79,7 @@ function App() {
             resetButton={ResetButton}
             nameFilter={nameFilter}
             nameHouse={houseFilter}
+            gender={gender}
           />
 
             <CharacterList characters={filteredCharacters} />

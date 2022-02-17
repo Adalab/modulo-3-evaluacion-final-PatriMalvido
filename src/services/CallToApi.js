@@ -14,10 +14,12 @@ const callToApi = (houseFilter) => {
           alive: character.alive,
           gender: character.gender,
           house: character.house,
+        
+
         };
       });
-
+console.log(data);
       return cleanData;
     });
 };
-export default callToApi;
+export default callToApi

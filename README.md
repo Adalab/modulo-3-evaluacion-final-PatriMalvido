@@ -1,4 +1,4 @@
-# MÓDULO 3 EJERCICIO EVALUACIÓN INTERMEDIA
+# MÓDULO 3 EJERCICIO EVALUACIÓN FINAL
 
 El ejercicio consiste en desarrollar una página web con React con un listado de personajes de Harry Potter.
 
