@@ -49,13 +49,12 @@ function App() {
     return character.name
       .toLocaleLowerCase()
       .includes(nameFilter.toLocaleLowerCase());
-  
   })
-  //  .filter ((character)=>{
-  //    return character.gender === '' ? true : character.gender===gender;
+  .filter((character) => {
+    return gender === '' ? true : character.gender === gender;
+  });
 
-  // });
-
+ 
   const renderCharacterDetail = (props) => {
     const routeId = parseInt(props.match.params.id);
 

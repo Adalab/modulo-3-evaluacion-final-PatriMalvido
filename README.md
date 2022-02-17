@@ -2,7 +2,7 @@
 
 El ejercicio consiste en desarrollar una página web con React con un listado de personajes de Harry Potter.
 
-Para probarlo haz click [aquí] y verás la página en funcionamiento.
+Para probarlo haz click [aquí](https://patrimalvido.github.io/modulo-3-evaluacion-final-PatriMalvido/) y verás la página en funcionamiento.
 
 ![image](src/images/completaHarry.png)
 
