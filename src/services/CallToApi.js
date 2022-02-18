@@ -6,6 +6,7 @@ const callToApi = (houseFilter) => {
     .then((data) => {
       const cleanData = data.map((character, index) => {
         return {
+           // id: character.actor + character.name,
           id: index,
          
           image: character.image,
