@@ -20,9 +20,9 @@ Los requisitos que me pidieron para la aplicación web son:
 
 ---------------------------------------------------
 
-#### Filtrar por nombre y por casa
+#### Filtrar por nombre, por casa y por genero
 
- Crear un formulario con filtros de busqueda.
+ Crear un formulario con filtros de búsqueda.
 
 
 
@@ -30,7 +30,7 @@ Los requisitos que me pidieron para la aplicación web son:
 
 ####  Detalle de los personajes
 
-Al hacer clic sobre la tarjeta de un personaje, su información aparece a pantalla completa con mas datos a mostrar.
+Al hacer clic sobre la tarjeta de un personaje, su información aparece a pantalla completa con más datos a mostrar.
 
 
 ![image](src/images/movilHermione.png)
@@ -44,6 +44,6 @@ Este proyecto está bajo la Licencia MIT License mira el archivo [LICENSE](LICEN
 -------------------------------------------------------
 ## Autora: :woman_technologist:
 
-Futura junior frontend developer **Patri Malvido** [Github](https://github.com/PatriMalvido)
+Junior frontend developer **Patri Malvido** [Github](https://github.com/PatriMalvido)
 
 
