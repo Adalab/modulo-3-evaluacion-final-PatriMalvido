@@ -7,13 +7,14 @@ const callToApi = (houseFilter) => {
       const cleanData = data.map((character, index) => {
         return {
           id: index,
-          // id: character.actor + character.name,
+         
           image: character.image,
           name: character.name,
           specie: character.species,
           alive: character.alive,
           gender: character.gender,
           house: character.house,
+           // id: character.actor + character.name,
         
 
         };
