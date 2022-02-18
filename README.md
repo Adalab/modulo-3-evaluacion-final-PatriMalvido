@@ -20,7 +20,7 @@ Los requisitos que me pidieron para la aplicación web son:
 
 ---------------------------------------------------
 
-#### Filtrar por nombre, por casa y por genero
+#### Filtrar por nombre, por casa y por género
 
  Crear un formulario con filtros de búsqueda.
 
